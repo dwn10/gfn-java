@@ -2,7 +2,8 @@ AUFGABEN-LF11aV2
 
 Begrüßung
 
-Es soll eine Begrüssung in Abhängingkeit zur Uhrzeit ausgegeben werden.Zwischen 22 Uhr und 5 Uhr:Gute Nacht Vor 11 Uhr:Guten Morgen Vor 15 Uhr:Mahlzeit Vor 18 Uhr:Guten Nachmittag Vor 22 Uhr:Guten Abend
+Es soll eine Begrüssung in Abhängingkeit zur Uhrzeit ausgegeben werden.Zwischen 22 Uhr und 5 Uhr:Gute Nacht 
+Vor 11 Uhr:Guten Morgen Vor 15 Uhr:Mahlzeit Vor 18 Uhr:Guten Nachmittag Vor 22 Uhr:Guten Abend
 
 Die Stunde per Random zwischen 0-23 erstellen.
 
@@ -32,11 +33,15 @@ y++;}
 // Erhöhe den X-Zähler
 x++;}}}
 
-Erklärung des Codes:In der main()-Methode wird ein Array mit den Zahlen von 1 bis 10 erstellt.Zwei Zähler werden initialisiert.In einer while-Schleife wird durch alle Zahlen von 1 bis 10 iteriert.In einer weiteren while-Schleife wird durch alle Zahlen von 1 bis 10 iteriert.In jeder Iteration wird die Multiplikation von X und Y ausgegeben.Der Y-Zähler wird erhöht.Der X-Zähler wird erhöht.Beispielausgabe:001 001|001 001 002|002 001 003|003 001 004|004 001 005|005.........009009|081 009 010|090
+Erklärung des Codes:In der main()-Methode wird ein Array mit den Zahlen von 1 bis 10 erstellt.Zwei Zähler werden initialisiert.In einer 
+    while-Schleife wird durch alle Zahlen von 1 bis 10 iteriert.In einer weiteren while-Schleife wird durch alle Zahlen von 1 bis 10 iteriert.
+    In jeder Iteration wird die Multiplikation von X und Y ausgegeben.Der Y-Zähler wird erhöht.Der X-Zähler 
+    wird erhöht.Beispielausgabe:001 001|001 001 002|002 001 003|003 001 004|004 001 005|005.........009009|081 009 010|090
 
 —---------------------------------------------------------------#3
 
-Fakultät Schreibe ein Programm,das ermittelt,welche Zahl möglichst groß ist ohne dass ihre Fakultät über 1.000.000.000ist.Gib zum Beweiß auch alle kleineren Fakultäten aus.
+Fakultät Schreibe ein Programm,das ermittelt,welche Zahl möglichst groß ist ohne dass ihre Fakultät über 1.000.000.000ist.
+    Gib zum Beweiß auch alle kleineren Fakultäten aus.
 
 Hinweis:Fakultät von 5(Kurzschreibweise:5!):1*2*3*4*5=120
 
@@ -249,7 +254,8 @@ public class Karten_mischen {
 }
 
 Erklärung des Codes:
-Der Code erstellt ein Kartenspiel mit einer ArrayList namens "karten". Das Kartenspiel besteht aus Karten, die durch eine Kombination von Farben und Werten repräsentiert werden. 
+Der Code erstellt ein Kartenspiel mit einer ArrayList namens "karten". Das Kartenspiel besteht aus Karten, 
+die durch eine Kombination von Farben und Werten repräsentiert werden. 
 1. Eine ArrayList namens "karten" wird erstellt, um die Karten des Kartenspiels zu speichern.
 2. Es werden zwei Arrays von Strings erstellt: "farben" enthält die möglichen Farben der Karten und "werte" enthält die möglichen Werte der Karten.
 3. Eine verschachtelte Schleife wird verwendet, um alle möglichen Kombinationen von Farben und Werten zu erstellen.
@@ -347,7 +353,9 @@ das das
 kleine Einmaleins
 formatiert ausgibt:
 
-001 002 003 004 005 006 007 008 009 010 002 004 006 008 010 012 014 016 018 020 003 006 009 012 015 018 021 024 027 030 004 008 012 016 020 024 028 032 036 040 005 010 015 020 025 030 035 040 045 050 006 012 018 024 030 036 042 048 054 060 007 014 021 028 035 042 049 056 063 070 008 016 024 032 040 048 056 064 072 080 009 018 027 036 045 054 063 072 081 090 010 020 030 040 050 060 070 080 090 100
+001 002 003 004 005 006 007 008 009 010 002 004 006 008 010 012 014 016 018 020 003 006 009 012 015 018 021 024 027 030 004 008 012 016 
+    020 024 028 032 036 040 005 010 015 020 025 030 035 040 045 050 006 012 018 024 030 036 042 048 054 060 007 014 021 028 035 042 049 
+    056 063 070 008 016 024 032 040 048 056 064 072 080 009 018 027 036 045 054 063 072 081 090 010 020 030 040 050 060 070 080 090 100
 
 Lösung
 :
@@ -378,7 +386,8 @@ public class Seitenzahlen {
     }
 }
 
-Dieses Programm verwendet eine ArrayList von [0] bis 9, um die Anzahl der benötigten Ziffern zu speichern. Es durchläuft dann alle Seiten ab Seite 5 und zählt die Anzahl der Vorkommen jeder Ziffer in den Seitennummern.
+Dieses Programm verwendet eine ArrayList von [0] bis 9, um die Anzahl der benötigten Ziffern zu speichern. 
+Es durchläuft dann alle Seiten ab Seite 5 und zählt die Anzahl der Vorkommen jeder Ziffer in den Seitennummern.
 Wenn du das Programm ausführst und 11 als Anzahl der Seiten eingibst, erhältst du folgende Ausgabe:
 Für 11 Seiten benötigst du folgende Ziffern:
 0: 1
@@ -395,7 +404,8 @@ Erklärung des Codes:
 Der Code berechnet die Anzahl der Vorkommen jeder Ziffer in den Seitenzahlen eines Buches.
 
 Es wird eine ArrayList mit dem Namen "ziffern" erstellt, um die Anzahl der Vorkommen jeder Ziffer zu speichern.
-In einer Schleife werden 10 Elemente mit dem Wert 0 zur "ziffern"-ArrayList hinzugefügt. Jedes Element repräsentiert eine Ziffer von 0 bis In einer weiteren Schleife wird jede Seite von 5 bis zur angegebenen Seitenzahl durchlaufen.
+In einer Schleife werden 10 Elemente mit dem Wert 0 zur "ziffern"-ArrayList hinzugefügt. 
+Jedes Element repräsentiert eine Ziffer von 0 bis In einer weiteren Schleife wird jede Seite von 5 bis zur angegebenen Seitenzahl durchlaufen.
 Für jede Seite wird der Seitenzahl-Integer in einen String konvertiert.
 In einer inneren Schleife wird jeder einzelne Charakter des Seitenzahl-Strings durchlaufen.
 Der Charakter wird in eine Ziffer umgewandelt und in der "ziffern"-ArrayList erhöht.
@@ -561,12 +571,14 @@ public class Fibonacci {
 
 Erklärung des Codes:
 Der oben gegebene Code ist eine Java-Implementierung des Fibonacci-Zahlen-Algorithmus.
-Die Klasse "Fibonacci" enthält die main-Methode, die den Code ausführt. Zuerst werden die ersten beiden Zahlen der Fibonacci-Folge festgelegt: n1 = 0 und n2 = 1. Dann wird eine Variable "n" initialisiert, um die aktuelle Zahl zu speichern. Die ersten beiden Zahlen werden ausgegeben (0 und 1). 
- Der Code verwendet eine Schleife, um die restlichen Zahlen der Fibonacci-Folge zu berechnen, solange die aktuelle Zahl "n" kleiner als 500 ist. In jedem Schleifendurchlauf werden die beiden vorherigen Zahlen addiert, um die aktuelle Zahl zu erhalten. Wenn die aktuelle Zahl kleiner als 500 ist, wird sie ausgegeben. 
- Nachdem die aktuelle Zahl ausgegeben wurde, werden die Variablen "n1" und "n2" aktualisiert, um die nächsten beiden Zahlen in der Folge zu speichern. Dieser Vorgang wird fortgesetzt, bis die aktuelle Zahl "n" 500 erreicht oder überschreitet. 
+Die Klasse "Fibonacci" enthält die main-Methode, die den Code ausführt. Zuerst werden die ersten beiden Zahlen 
+der Fibonacci-Folge festgelegt: n1 = 0 und n2 = 1. Dann wird eine Variable "n" initialisiert, um die aktuelle Zahl zu speichern.
+Die ersten beiden Zahlen werden ausgegeben (0 und 1). 
+Der Code verwendet eine Schleife, um die restlichen Zahlen der Fibonacci-Folge zu berechnen, solange die aktuelle Zahl "n" kleiner als 500 ist. 
+In jedem Schleifendurchlauf werden die beiden vorherigen Zahlen addiert, um die aktuelle Zahl zu erhalten. Wenn die aktuelle Zahl kleiner als 500 ist, 
+wird sie ausgegeben. Nachdem die aktuelle Zahl ausgegeben wurde, werden die Variablen "n1" und "n2" aktualisiert, 
+um die nächsten beiden Zahlen in der Folge zu speichern. Dieser Vorgang wird fortgesetzt, bis die aktuelle Zahl "n" 500 erreicht oder überschreitet. 
 —------------------------------------------------------------------
-
-
 
  # 9
 
@@ -612,7 +624,8 @@ public class Quadratzahlen {
 }
 
 Erklärung des Codes:
-Dieser Code gibt alle Quadratzahlen von natürlichen Zahlen (1, 2, 3, ...) aus, die kleiner als 100 sind. Außerdem wird die Anzahl der gefundenen Quadratzahlen ausgegeben.
+Dieser Code gibt alle Quadratzahlen von natürlichen Zahlen (1, 2, 3, ...) aus, die kleiner als 100 sind. 
+Außerdem wird die Anzahl der gefundenen Quadratzahlen ausgegeben.
 Schritt 1: Initialisierung
 In der main()-Methode werden zwei Variablen initialisiert:
 n: Die aktuelle Zahl
@@ -927,14 +940,21 @@ public class Kreis {
 }
 
 Erklärung des Codes:
+
 In der main()-Methode wird die Konstante PI definiert.
 Der Benutzer wird aufgefordert, den Radius einzugeben.
 Der Radius wird als double-Wert gespeichert.
 Die Kreisfläche wird mit der Formel F = π * r² berechnet.
 Der Kreisumfang wird mit der Formel U = 2 * π * r berechnet.
 Die Ergebnisse werden ausgegeben.
-Dieser Code definiert eine Klasse namens "Kreis_1", die eine Methode namens "main" enthält. In der Methode wird zuerst die Konstante "PI" definiert und dann der Benutzer aufgefordert, den Radius des Kreises einzugeben. Anschließend werden die Fläche und der Umfang des Kreises berechnet und ausgegeben. Der Code verwendet die Formeln für die Berechnung der Kreisfläche (πr²) und des Kreisumfangs (2πr), wobei "r" der Radius des Kreises ist.
+    
+Dieser Code definiert eine Klasse namens "Kreis_1", die eine Methode namens "main" enthält. 
+In der Methode wird zuerst die Konstante "PI" definiert und dann der Benutzer aufgefordert, 
+den Radius des Kreises einzugeben. Anschließend werden die Fläche und der Umfang des Kreises berechnet und ausgegeben. 
+Der Code verwendet die Formeln für die Berechnung der Kreisfläche (πr²) und des Kreisumfangs (2πr), wobei "r" der Radius des Kreises ist.
+    
 Kommentar:
+    
 Die Konstante PI ist eine mathematische Konstante, die das Verhältnis des Umfangs eines Kreises zu seinem Durchmesser beschreibt.
 Der Radius ist der Abstand vom Mittelpunkt eines Kreises zu seiner Peripherie.
 Die Kreisfläche ist die Fläche, die von einem Kreis eingeschlossen wird.
@@ -966,6 +986,9 @@ public class Kreis_2 {
     }
 }
 
-Dieser Code berechnet die Fläche und den Umfang eines Kreises basierend auf der Benutzereingabe für den Radius. Das Programm fordert den Benutzer zur Eingabe des Radius auf und berechnet dann die Fläche mithilfe der Formel Math.PI * Radius * Radius und den Umfang mithilfe der Formel 2 * Math.PI * Radius. Schließlich werden die berechnete Fläche und der Umfang des Kreises angezeigt.
+Dieser Code berechnet die Fläche und den Umfang eines Kreises basierend auf der Benutzereingabe für den Radius. 
+Das Programm fordert den Benutzer zur Eingabe des Radius auf und berechnet dann die Fläche mithilfe 
+der Formel Math.PI * Radius * Radius und den Umfang mithilfe der Formel 2 * Math.PI * Radius. Schließlich 
+werden die berechnete Fläche und der Umfang des Kreises angezeigt.
 —---------------------------------------------------------------
  # 13
