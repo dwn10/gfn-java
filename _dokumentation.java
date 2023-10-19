@@ -40,7 +40,82 @@ while-Schleife wird durch alle Zahlen von 1 bis 10 iteriert.In einer weiteren wh
 In jeder Iteration wird die Multiplikation von X und Y ausgegeben.Der Y-Zähler wird erhöht.Der X-Zähler 
 wird erhöht.Beispielausgabe:001 001|001 001 002|002 001 003|003 001 004|004 001 005|005.........009009|081 009 010|090
 
-—---------------------------------------------------------------#3
+—----------------------------------------------------------------
+    
+#2
+
+Kleines Einmaleins
+Schreibe ein Programm,
+das das
+kleine Einmaleins
+formatiert ausgibt:
+
+001 002 003 004 005 006 007 008 009 010 002 004 006 008 010 012 014 016 018 020 003 006 009 012 015 018 021 024 027 030 004 008 012 016 
+    020 024 028 032 036 040 005 010 015 020 025 030 035 040 045 050 006 012 018 024 030 036 042 048 054 060 007 014 021 028 035 042 049 
+    056 063 070 008 016 024 032 040 048 056 064 072 080 009 018 027 036 045 054 063 072 081 090 010 020 030 040 050 060 070 080 090 100
+
+Lösung
+:
+
+import java.util.Arrays;
+import java.util.Random;
+
+import aufgaben.Fibonacci;
+
+public class Seitenzahlen {
+    public static void main(String[] args) {
+        int seiten = 11; // Hier die Anzahl der Seiten eintragen
+        ArrayList<Integer> ziffern = new ArrayList<Integer>();
+        for (int i = 0; i < 10; i++) {
+            ziffern.add(0);
+        }
+        for (int i = 5; i <= seiten; i++) {
+            String seitenString = Integer.toString(i);
+            for (int j = 0; j < seitenString.length(); j++) {
+                int ziffer = Character.getNumericValue(seitenString.charAt(j));
+                ziffern.set(ziffer, ziffern.get(ziffer) + 1);
+            }
+        }
+        System.out.println("Für " + seiten + " Seiten benötigst du folgende Ziffern:");
+        for (int i = 0; i < 10; i++) {
+            System.out.println(i + ": " + ziffern.get(i));
+        }
+    }
+}
+
+Dieses Programm verwendet eine ArrayList von [0] bis 9, um die Anzahl der benötigten Ziffern zu speichern. 
+Es durchläuft dann alle Seiten ab Seite 5 und zählt die Anzahl der Vorkommen jeder Ziffer in den Seitennummern.
+Wenn du das Programm ausführst und 11 als Anzahl der Seiten eingibst, erhältst du folgende Ausgabe:
+Für 11 Seiten benötigst du folgende Ziffern:
+
+0: 1
+1: 3
+2: 0
+3: 0
+4: 0
+5: 1
+6: 1
+7: 1
+8: 1
+9: 1
+    
+Erklärung des Codes:
+
+Der Code berechnet die Anzahl der Vorkommen jeder Ziffer in den Seitenzahlen eines Buches.
+
+Es wird eine ArrayList mit dem Namen "ziffern" erstellt, um die Anzahl der Vorkommen jeder Ziffer zu speichern.
+In einer Schleife werden 10 Elemente mit dem Wert 0 zur "ziffern"-ArrayList hinzugefügt. 
+Jedes Element repräsentiert eine Ziffer von 0 bis In einer weiteren Schleife wird jede Seite von 5 bis zur angegebenen Seitenzahl durchlaufen.
+Für jede Seite wird der Seitenzahl-Integer in einen String konvertiert.
+In einer inneren Schleife wird jeder einzelne Charakter des Seitenzahl-Strings durchlaufen.
+Der Charakter wird in eine Ziffer umgewandelt und in der "ziffern"-ArrayList erhöht.
+Am Ende werden die Ergebnisse ausgegeben, indem die Anzahl der Vorkommen jeder Ziffer in einer Schleife angezeigt wird.
+
+Zusammenfassend berechnet der Code die Anzahl der Vorkommen jeder Ziffer in den Seitenzahlen eines Buches und gibt die Ergebnisse aus.
+
+—---------------------------------------------------------------
+    
+#3
 
 Fakultät Schreibe ein Programm,das ermittelt,welche Zahl möglichst groß ist ohne dass ihre Fakultät über 1.000.000.000ist.
 Gib zum Beweiß auch alle kleineren Fakultäten aus.
@@ -196,6 +271,7 @@ Zuletzt wird geprüft, ob der Tag gültig ist.
 Beispielausgabe: Das Datum ist korrekt.
 
 —---------------------------------------------------------------
+    
 # 5
 
 Karten_mischen
@@ -274,6 +350,7 @@ jedes Element (Array) in der ArrayList "karten" zu iterieren und die Farbe und d
 Zusammenfassend erstellt der Code ein Kartenspiel, mischt die Karten und gibt sie sowohl vor dem Mischen als auch nach dem Mischen aus.
     
 —------------------------------------------------------------------
+    
 # 6
 
 Seitenzahlen
@@ -350,78 +427,8 @@ ausgegeben.Wenn die
 Uhrzeit vor 22
 Uhr liegt, wird"Guten Abend!"ausgegeben.
 
-—----------------------------------------------------------------#2
-
-Kleines Einmaleins
-Schreibe ein Programm,
-das das
-kleine Einmaleins
-formatiert ausgibt:
-
-001 002 003 004 005 006 007 008 009 010 002 004 006 008 010 012 014 016 018 020 003 006 009 012 015 018 021 024 027 030 004 008 012 016 
-    020 024 028 032 036 040 005 010 015 020 025 030 035 040 045 050 006 012 018 024 030 036 042 048 054 060 007 014 021 028 035 042 049 
-    056 063 070 008 016 024 032 040 048 056 064 072 080 009 018 027 036 045 054 063 072 081 090 010 020 030 040 050 060 070 080 090 100
-
-Lösung
-:
-
-import java.util.Arrays;
-import java.util.Random;
-
-import aufgaben.Fibonacci;
-
-public class Seitenzahlen {
-    public static void main(String[] args) {
-        int seiten = 11; // Hier die Anzahl der Seiten eintragen
-        ArrayList<Integer> ziffern = new ArrayList<Integer>();
-        for (int i = 0; i < 10; i++) {
-            ziffern.add(0);
-        }
-        for (int i = 5; i <= seiten; i++) {
-            String seitenString = Integer.toString(i);
-            for (int j = 0; j < seitenString.length(); j++) {
-                int ziffer = Character.getNumericValue(seitenString.charAt(j));
-                ziffern.set(ziffer, ziffern.get(ziffer) + 1);
-            }
-        }
-        System.out.println("Für " + seiten + " Seiten benötigst du folgende Ziffern:");
-        for (int i = 0; i < 10; i++) {
-            System.out.println(i + ": " + ziffern.get(i));
-        }
-    }
-}
-
-Dieses Programm verwendet eine ArrayList von [0] bis 9, um die Anzahl der benötigten Ziffern zu speichern. 
-Es durchläuft dann alle Seiten ab Seite 5 und zählt die Anzahl der Vorkommen jeder Ziffer in den Seitennummern.
-Wenn du das Programm ausführst und 11 als Anzahl der Seiten eingibst, erhältst du folgende Ausgabe:
-Für 11 Seiten benötigst du folgende Ziffern:
-
-0: 1
-1: 3
-2: 0
-3: 0
-4: 0
-5: 1
-6: 1
-7: 1
-8: 1
-9: 1
-    
-Erklärung des Codes:
-
-Der Code berechnet die Anzahl der Vorkommen jeder Ziffer in den Seitenzahlen eines Buches.
-
-Es wird eine ArrayList mit dem Namen "ziffern" erstellt, um die Anzahl der Vorkommen jeder Ziffer zu speichern.
-In einer Schleife werden 10 Elemente mit dem Wert 0 zur "ziffern"-ArrayList hinzugefügt. 
-Jedes Element repräsentiert eine Ziffer von 0 bis In einer weiteren Schleife wird jede Seite von 5 bis zur angegebenen Seitenzahl durchlaufen.
-Für jede Seite wird der Seitenzahl-Integer in einen String konvertiert.
-In einer inneren Schleife wird jeder einzelne Charakter des Seitenzahl-Strings durchlaufen.
-Der Charakter wird in eine Ziffer umgewandelt und in der "ziffern"-ArrayList erhöht.
-Am Ende werden die Ergebnisse ausgegeben, indem die Anzahl der Vorkommen jeder Ziffer in einer Schleife angezeigt wird.
-
-Zusammenfassend berechnet der Code die Anzahl der Vorkommen jeder Ziffer in den Seitenzahlen eines Buches und gibt die Ergebnisse aus.
-
 —------------------------------------------------------------------
+    
 # 7
 
 Bubblesort
@@ -525,6 +532,7 @@ Zusammenfassend implementiert der Code den Bubble-Sort-Algorithmus zur Sortierun
 
 
 —------------------------------------------------------------------
+    
  # 8
 
 Fibonacci
@@ -697,6 +705,7 @@ public class Zahlenabfolge_2 {
         }
     }
 }
+
 —------------------------------------------------------------------
 
 Schreibe eine for Schleife, die Folgendes ausgibt: 2.0 1.5 1.0 0.5 0.0 -0.5 -1.0
@@ -863,7 +872,6 @@ Die Summe wird in einer For-Schleife berechnet.
 In der for-Schleife wird die aktuelle Zahl zur Summe addiert.
 Die Summe wird ausgegeben.
 
-
 —------------------------------------------------------------------
 
  # 11
@@ -976,6 +984,7 @@ Die Kreisfläche ist die Fläche, die von einem Kreis eingeschlossen wird.
 Der Kreisumfang ist die Länge der Linie, die den Kreis umschließt.
 
 —------------------------------------------------------------------
+    
 Variante 2
 
 public class Kreis_2 {
