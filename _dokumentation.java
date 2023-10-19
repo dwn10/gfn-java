@@ -33,15 +33,17 @@ y++;}
 // Erhöhe den X-Zähler
 x++;}}}
 
-Erklärung des Codes:In der main()-Methode wird ein Array mit den Zahlen von 1 bis 10 erstellt.Zwei Zähler werden initialisiert.In einer 
-    while-Schleife wird durch alle Zahlen von 1 bis 10 iteriert.In einer weiteren while-Schleife wird durch alle Zahlen von 1 bis 10 iteriert.
-    In jeder Iteration wird die Multiplikation von X und Y ausgegeben.Der Y-Zähler wird erhöht.Der X-Zähler 
-    wird erhöht.Beispielausgabe:001 001|001 001 002|002 001 003|003 001 004|004 001 005|005.........009009|081 009 010|090
+Erklärung des Codes:
+
+In der main()-Methode wird ein Array mit den Zahlen von 1 bis 10 erstellt.Zwei Zähler werden initialisiert.In einer 
+while-Schleife wird durch alle Zahlen von 1 bis 10 iteriert.In einer weiteren while-Schleife wird durch alle Zahlen von 1 bis 10 iteriert.
+In jeder Iteration wird die Multiplikation von X und Y ausgegeben.Der Y-Zähler wird erhöht.Der X-Zähler 
+wird erhöht.Beispielausgabe:001 001|001 001 002|002 001 003|003 001 004|004 001 005|005.........009009|081 009 010|090
 
 —---------------------------------------------------------------#3
 
 Fakultät Schreibe ein Programm,das ermittelt,welche Zahl möglichst groß ist ohne dass ihre Fakultät über 1.000.000.000ist.
-    Gib zum Beweiß auch alle kleineren Fakultäten aus.
+Gib zum Beweiß auch alle kleineren Fakultäten aus.
 
 Hinweis:Fakultät von 5(Kurzschreibweise:5!):1*2*3*4*5=120
 
@@ -79,13 +81,14 @@ public class Fakultaet {
     }}
 
 Erklärung des Codes:
-    In der
 
-    main()-Methode wird ein Array mit den Fakultäten erstellt.
+In der main()-Methode wird ein Array mit den Fakultäten erstellt.
 Die Fakultäten werden initialisiert.
 Die Fakultäten werden berechnet.
+    
 Die größte Zahl, ohne dass ihre Fakultät über 1.000.000.000 ist, wird gesucht.
 Die Ergebnisse werden ausgegeben.
+    
 Beispielausgabe:
 Die größte Zahl, ohne dass ihre Fakultät über 1.000.000.000 ist, ist 9.
 0! = 1
@@ -102,7 +105,6 @@ Die größte Zahl, ohne dass ihre Fakultät über 1.000.000.000 ist, ist 9.
 —---------------------------------------------------------------
 
 # 4
-
 
 Korrektes Datum
 
@@ -184,11 +186,13 @@ public class Datumspruefung {
 }
 
 Erklärung des Codes:
+
 In der Main()-Methode werden die Daten für das zu prüfende Datum übergeben.
 Die prüfDatum()-Methode wird aufgerufen, um das Datum zu prüfen.
 Die prüfDatum()-Methode prüft zunächst, ob das Jahr gültig ist.
 Anschließend wird geprüft, ob der Monat gültig ist.
 Zuletzt wird geprüft, ob der Tag gültig ist.
+    
 Beispielausgabe: Das Datum ist korrekt.
 
 —---------------------------------------------------------------
@@ -254,6 +258,7 @@ public class Karten_mischen {
 }
 
 Erklärung des Codes:
+
 Der Code erstellt ein Kartenspiel mit einer ArrayList namens "karten". Das Kartenspiel besteht aus Karten, 
 die durch eine Kombination von Farben und Werten repräsentiert werden. 
 1. Eine ArrayList namens "karten" wird erstellt, um die Karten des Kartenspiels zu speichern.
@@ -261,13 +266,13 @@ die durch eine Kombination von Farben und Werten repräsentiert werden.
 3. Eine verschachtelte Schleife wird verwendet, um alle möglichen Kombinationen von Farben und Werten zu erstellen.
 4. Für jede Kombination von Farbe und Wert wird ein neues String-Array erstellt und der ArrayList "karten" hinzugefügt.
 5. Die Karten werden ungemischt ausgegeben, indem eine Schleife verwendet wird, um über
-
-    jedes Element (Array) in der ArrayList "karten" zu iterieren und die Farbe und den Wert der Karte auszugeben.
+jedes Element (Array) in der ArrayList "karten" zu iterieren und die Farbe und den Wert der Karte auszugeben.
 6. Die Karten werden dann mit der Collections.shuffle()-Methode gemischt.
 7. Die gemischten Karten werden ausgegeben, indem eine Schleife verwendet wird, um über
-
-    jedes Element (Array) in der ArrayList "karten" zu iterieren und die Farbe und den Wert der Karte auszugeben.
+jedes Element (Array) in der ArrayList "karten" zu iterieren und die Farbe und den Wert der Karte auszugeben.
+    
 Zusammenfassend erstellt der Code ein Kartenspiel, mischt die Karten und gibt sie sowohl vor dem Mischen als auch nach dem Mischen aus.
+    
 —------------------------------------------------------------------
 # 6
 
@@ -390,6 +395,7 @@ Dieses Programm verwendet eine ArrayList von [0] bis 9, um die Anzahl der benöt
 Es durchläuft dann alle Seiten ab Seite 5 und zählt die Anzahl der Vorkommen jeder Ziffer in den Seitennummern.
 Wenn du das Programm ausführst und 11 als Anzahl der Seiten eingibst, erhältst du folgende Ausgabe:
 Für 11 Seiten benötigst du folgende Ziffern:
+
 0: 1
 1: 3
 2: 0
@@ -400,7 +406,9 @@ Für 11 Seiten benötigst du folgende Ziffern:
 7: 1
 8: 1
 9: 1
+    
 Erklärung des Codes:
+
 Der Code berechnet die Anzahl der Vorkommen jeder Ziffer in den Seitenzahlen eines Buches.
 
 Es wird eine ArrayList mit dem Namen "ziffern" erstellt, um die Anzahl der Vorkommen jeder Ziffer zu speichern.
@@ -409,13 +417,12 @@ Jedes Element repräsentiert eine Ziffer von 0 bis In einer weiteren Schleife wi
 Für jede Seite wird der Seitenzahl-Integer in einen String konvertiert.
 In einer inneren Schleife wird jeder einzelne Charakter des Seitenzahl-Strings durchlaufen.
 Der Charakter wird in eine Ziffer umgewandelt und in der "ziffern"-ArrayList erhöht.
- Am Ende werden die Ergebnisse ausgegeben, indem die Anzahl der Vorkommen jeder Ziffer in einer Schleife angezeigt wird.
+Am Ende werden die Ergebnisse ausgegeben, indem die Anzahl der Vorkommen jeder Ziffer in einer Schleife angezeigt wird.
 
 Zusammenfassend berechnet der Code die Anzahl der Vorkommen jeder Ziffer in den Seitenzahlen eines Buches und gibt die Ergebnisse aus.
 
 —------------------------------------------------------------------
 # 7
-
 
 Bubblesort
 
@@ -570,6 +577,7 @@ public class Fibonacci {
 }
 
 Erklärung des Codes:
+
 Der oben gegebene Code ist eine Java-Implementierung des Fibonacci-Zahlen-Algorithmus.
 Die Klasse "Fibonacci" enthält die main-Methode, die den Code ausführt. Zuerst werden die ersten beiden Zahlen 
 der Fibonacci-Folge festgelegt: n1 = 0 und n2 = 1. Dann wird eine Variable "n" initialisiert, um die aktuelle Zahl zu speichern.
@@ -578,6 +586,7 @@ Der Code verwendet eine Schleife, um die restlichen Zahlen der Fibonacci-Folge z
 In jedem Schleifendurchlauf werden die beiden vorherigen Zahlen addiert, um die aktuelle Zahl zu erhalten. Wenn die aktuelle Zahl kleiner als 500 ist, 
 wird sie ausgegeben. Nachdem die aktuelle Zahl ausgegeben wurde, werden die Variablen "n1" und "n2" aktualisiert, 
 um die nächsten beiden Zahlen in der Folge zu speichern. Dieser Vorgang wird fortgesetzt, bis die aktuelle Zahl "n" 500 erreicht oder überschreitet. 
+    
 —------------------------------------------------------------------
 
  # 9
@@ -624,6 +633,7 @@ public class Quadratzahlen {
 }
 
 Erklärung des Codes:
+
 Dieser Code gibt alle Quadratzahlen von natürlichen Zahlen (1, 2, 3, ...) aus, die kleiner als 100 sind. 
 Außerdem wird die Anzahl der gefundenen Quadratzahlen ausgegeben.
 Schritt 1: Initialisierung
@@ -643,7 +653,6 @@ Die Anzahl der gefundenen Quadratzahlen wird am Ende des Codes ausgegeben: Syste
 —------------------------------------------------------------------
 
  # 10
-
 
 Schreibe eine for Schleife, die Folgendes ausgibt: 100 90 80 70 60 50 40 30 20 10
 public class Zahlenabfolge_1 {
@@ -710,6 +719,7 @@ public class Zahlenabfolge_3 {
         }
     }
 }
+
 —------------------------------------------------------------------
 
 Schreibe eine for Schleife, die Folgendes ausgibt: 1,0 2,2 3,4 4,6 5,8 7,0 8,2 9,4
@@ -734,6 +744,7 @@ public class Zahlenabfolge_4 {
         }
     }
 }
+
 —------------------------------------------------------------------
 
 Schreibe eine for Schleife, die Folgendes ausgibt: 25 27 29 211 213
@@ -758,6 +769,7 @@ public class Zahlenabfolge_5 {
 }
 
 —------------------------------------------------------------------
+    
 Schreibe eine for Schleife, die Folgendes ausgibt: a2b3 a12b13 822623
 public class Zahlenabfolge_6 {
 
@@ -784,6 +796,7 @@ public class Zahlenabfolge_6 {
 }
 
 —------------------------------------------------------------------
+    
 Schreibe eine for-Schleife, die Folgendes ausgibt:  13 17 21 29 33 37 45
 public class Zahlenabfolge_7 {
 
@@ -806,6 +819,7 @@ public class Zahlenabfolge_7 {
 }
 
 —------------------------------------------------------------------
+    
 Schreibe EINE for-Schleife, die Folgendes ausgibt: 123454321
 public class Zahlenabfolge_8 {
 
@@ -820,6 +834,7 @@ public class Zahlenabfolge_8 {
 }
 
 —------------------------------------------------------------------
+    
 Schreibe ein Programm, das per For-Schleife alle Zahlen von 1 bis 20 addiert und danach das Endergebnis ausgibt.
 public class Zahlenabfolge_9 {
 
@@ -902,13 +917,13 @@ public class EscapeSequenzen {
             }
 }
 
-
 —------------------------------------------------------------------
 
  # 12
 
 Schreiben Sie ein Programm Kreis.java, in welchem Sie dem Nutzer die Möglichkeit geben, den Radius einzugeben.
-Formel für die Berechnung der Kreisfläche:                         	F = π * r²
+    
+Formel für die Berechnung der Kreisfläche:                      F = π * r²
 Formel für die Berechnung des Kreisumfangs:                   	U = 2 * π  * r
 
 Lösung:
