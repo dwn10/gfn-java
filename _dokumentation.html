@@ -2,7 +2,8 @@ AUFGABEN-LF11aV2
 
 Begrüßung
 
-Es soll eine Begrüssung in Abhängingkeit zur Uhrzeit ausgegeben werden.Zwischen 22 Uhr und 5 Uhr:Gute Nacht Vor 11 Uhr:Guten Morgen Vor 15 Uhr:Mahlzeit Vor 18 Uhr:Guten Nachmittag Vor 22 Uhr:Guten Abend
+Es soll eine Begrüssung in Abhängingkeit zur Uhrzeit ausgegeben werden.Zwischen 22 Uhr und 5 Uhr:Gute Nacht 
+Vor 11 Uhr:Guten Morgen Vor 15 Uhr:Mahlzeit Vor 18 Uhr:Guten Nachmittag Vor 22 Uhr:Guten Abend
 
 Die Stunde per Random zwischen 0-23 erstellen.
 
@@ -32,11 +33,91 @@ y++;}
 // Erhöhe den X-Zähler
 x++;}}}
 
-Erklärung des Codes:In der main()-Methode wird ein Array mit den Zahlen von 1 bis 10 erstellt.Zwei Zähler werden initialisiert.In einer while-Schleife wird durch alle Zahlen von 1 bis 10 iteriert.In einer weiteren while-Schleife wird durch alle Zahlen von 1 bis 10 iteriert.In jeder Iteration wird die Multiplikation von X und Y ausgegeben.Der Y-Zähler wird erhöht.Der X-Zähler wird erhöht.Beispielausgabe:001 001|001 001 002|002 001 003|003 001 004|004 001 005|005.........009009|081 009 010|090
+Erklärung des Codes:
 
-—---------------------------------------------------------------#3
+In der main()-Methode wird ein Array mit den Zahlen von 1 bis 10 erstellt.Zwei Zähler werden initialisiert.In einer 
+while-Schleife wird durch alle Zahlen von 1 bis 10 iteriert.In einer weiteren while-Schleife wird durch alle Zahlen von 1 bis 10 iteriert.
+In jeder Iteration wird die Multiplikation von X und Y ausgegeben.Der Y-Zähler wird erhöht.Der X-Zähler 
+wird erhöht.Beispielausgabe:001 001|001 001 002|002 001 003|003 001 004|004 001 005|005.........009009|081 009 010|090
 
-Fakultät Schreibe ein Programm,das ermittelt,welche Zahl möglichst groß ist ohne dass ihre Fakultät über 1.000.000.000ist.Gib zum Beweiß auch alle kleineren Fakultäten aus.
+—----------------------------------------------------------------
+    
+#2
+
+Kleines Einmaleins
+Schreibe ein Programm,
+das das
+kleine Einmaleins
+formatiert ausgibt:
+
+001 002 003 004 005 006 007 008 009 010 002 004 006 008 010 012 014 016 018 020 003 006 009 012 015 018 021 024 027 030 004 008 012 016 
+    020 024 028 032 036 040 005 010 015 020 025 030 035 040 045 050 006 012 018 024 030 036 042 048 054 060 007 014 021 028 035 042 049 
+    056 063 070 008 016 024 032 040 048 056 064 072 080 009 018 027 036 045 054 063 072 081 090 010 020 030 040 050 060 070 080 090 100
+
+Lösung:
+
+import java.util.Arrays;
+import java.util.Random;
+
+import aufgaben.Fibonacci;
+
+public class Seitenzahlen {
+    public static void main(String[] args) {
+        int seiten = 11; // Hier die Anzahl der Seiten eintragen
+        ArrayList<Integer> ziffern = new ArrayList<Integer>();
+        for (int i = 0; i < 10; i++) {
+            ziffern.add(0);
+        }
+        for (int i = 5; i <= seiten; i++) {
+            String seitenString = Integer.toString(i);
+            for (int j = 0; j < seitenString.length(); j++) {
+                int ziffer = Character.getNumericValue(seitenString.charAt(j));
+                ziffern.set(ziffer, ziffern.get(ziffer) + 1);
+            }
+        }
+        System.out.println("Für " + seiten + " Seiten benötigst du folgende Ziffern:");
+        for (int i = 0; i < 10; i++) {
+            System.out.println(i + ": " + ziffern.get(i));
+        }
+    }
+}
+
+Dieses Programm verwendet eine ArrayList von [0] bis 9, um die Anzahl der benötigten Ziffern zu speichern. 
+Es durchläuft dann alle Seiten ab Seite 5 und zählt die Anzahl der Vorkommen jeder Ziffer in den Seitennummern.
+Wenn du das Programm ausführst und 11 als Anzahl der Seiten eingibst, erhältst du folgende Ausgabe:
+Für 11 Seiten benötigst du folgende Ziffern:
+
+0: 1
+1: 3
+2: 0
+3: 0
+4: 0
+5: 1
+6: 1
+7: 1
+8: 1
+9: 1
+    
+Erklärung des Codes:
+
+Der Code berechnet die Anzahl der Vorkommen jeder Ziffer in den Seitenzahlen eines Buches.
+
+Es wird eine ArrayList mit dem Namen "ziffern" erstellt, um die Anzahl der Vorkommen jeder Ziffer zu speichern.
+In einer Schleife werden 10 Elemente mit dem Wert 0 zur "ziffern"-ArrayList hinzugefügt. 
+Jedes Element repräsentiert eine Ziffer von 0 bis In einer weiteren Schleife wird jede Seite von 5 bis zur angegebenen Seitenzahl durchlaufen.
+Für jede Seite wird der Seitenzahl-Integer in einen String konvertiert.
+In einer inneren Schleife wird jeder einzelne Charakter des Seitenzahl-Strings durchlaufen.
+Der Charakter wird in eine Ziffer umgewandelt und in der "ziffern"-ArrayList erhöht.
+Am Ende werden die Ergebnisse ausgegeben, indem die Anzahl der Vorkommen jeder Ziffer in einer Schleife angezeigt wird.
+
+Zusammenfassend berechnet der Code die Anzahl der Vorkommen jeder Ziffer in den Seitenzahlen eines Buches und gibt die Ergebnisse aus.
+
+—---------------------------------------------------------------
+    
+#3
+
+Fakultät Schreibe ein Programm,das ermittelt,welche Zahl möglichst groß ist ohne dass ihre Fakultät über 1.000.000.000ist.
+Gib zum Beweiß auch alle kleineren Fakultäten aus.
 
 Hinweis:Fakultät von 5(Kurzschreibweise:5!):1*2*3*4*5=120
 
@@ -74,13 +155,14 @@ public class Fakultaet {
     }}
 
 Erklärung des Codes:
-    In der
 
-    main()-Methode wird ein Array mit den Fakultäten erstellt.
+In der main()-Methode wird ein Array mit den Fakultäten erstellt.
 Die Fakultäten werden initialisiert.
 Die Fakultäten werden berechnet.
+    
 Die größte Zahl, ohne dass ihre Fakultät über 1.000.000.000 ist, wird gesucht.
 Die Ergebnisse werden ausgegeben.
+    
 Beispielausgabe:
 Die größte Zahl, ohne dass ihre Fakultät über 1.000.000.000 ist, ist 9.
 0! = 1
@@ -97,7 +179,6 @@ Die größte Zahl, ohne dass ihre Fakultät über 1.000.000.000 ist, ist 9.
 —---------------------------------------------------------------
 
 # 4
-
 
 Korrektes Datum
 
@@ -179,14 +260,17 @@ public class Datumspruefung {
 }
 
 Erklärung des Codes:
+
 In der Main()-Methode werden die Daten für das zu prüfende Datum übergeben.
 Die prüfDatum()-Methode wird aufgerufen, um das Datum zu prüfen.
 Die prüfDatum()-Methode prüft zunächst, ob das Jahr gültig ist.
 Anschließend wird geprüft, ob der Monat gültig ist.
 Zuletzt wird geprüft, ob der Tag gültig ist.
+    
 Beispielausgabe: Das Datum ist korrekt.
 
 —---------------------------------------------------------------
+    
 # 5
 
 Karten_mischen
@@ -249,20 +333,23 @@ public class Karten_mischen {
 }
 
 Erklärung des Codes:
-Der Code erstellt ein Kartenspiel mit einer ArrayList namens "karten". Das Kartenspiel besteht aus Karten, die durch eine Kombination von Farben und Werten repräsentiert werden. 
+
+Der Code erstellt ein Kartenspiel mit einer ArrayList namens "karten". Das Kartenspiel besteht aus Karten, 
+die durch eine Kombination von Farben und Werten repräsentiert werden. 
 1. Eine ArrayList namens "karten" wird erstellt, um die Karten des Kartenspiels zu speichern.
 2. Es werden zwei Arrays von Strings erstellt: "farben" enthält die möglichen Farben der Karten und "werte" enthält die möglichen Werte der Karten.
 3. Eine verschachtelte Schleife wird verwendet, um alle möglichen Kombinationen von Farben und Werten zu erstellen.
 4. Für jede Kombination von Farbe und Wert wird ein neues String-Array erstellt und der ArrayList "karten" hinzugefügt.
 5. Die Karten werden ungemischt ausgegeben, indem eine Schleife verwendet wird, um über
-
-    jedes Element (Array) in der ArrayList "karten" zu iterieren und die Farbe und den Wert der Karte auszugeben.
+jedes Element (Array) in der ArrayList "karten" zu iterieren und die Farbe und den Wert der Karte auszugeben.
 6. Die Karten werden dann mit der Collections.shuffle()-Methode gemischt.
 7. Die gemischten Karten werden ausgegeben, indem eine Schleife verwendet wird, um über
-
-    jedes Element (Array) in der ArrayList "karten" zu iterieren und die Farbe und den Wert der Karte auszugeben.
+jedes Element (Array) in der ArrayList "karten" zu iterieren und die Farbe und den Wert der Karte auszugeben.
+    
 Zusammenfassend erstellt der Code ein Kartenspiel, mischt die Karten und gibt sie sowohl vor dem Mischen als auch nach dem Mischen aus.
+    
 —------------------------------------------------------------------
+    
 # 6
 
 Seitenzahlen
@@ -339,73 +426,9 @@ ausgegeben.Wenn die
 Uhrzeit vor 22
 Uhr liegt, wird"Guten Abend!"ausgegeben.
 
-—----------------------------------------------------------------#2
-
-Kleines Einmaleins
-Schreibe ein Programm,
-das das
-kleine Einmaleins
-formatiert ausgibt:
-
-001 002 003 004 005 006 007 008 009 010 002 004 006 008 010 012 014 016 018 020 003 006 009 012 015 018 021 024 027 030 004 008 012 016 020 024 028 032 036 040 005 010 015 020 025 030 035 040 045 050 006 012 018 024 030 036 042 048 054 060 007 014 021 028 035 042 049 056 063 070 008 016 024 032 040 048 056 064 072 080 009 018 027 036 045 054 063 072 081 090 010 020 030 040 050 060 070 080 090 100
-
-Lösung
-:
-
-import java.util.Arrays;
-import java.util.Random;
-
-import aufgaben.Fibonacci;
-
-public class Seitenzahlen {
-    public static void main(String[] args) {
-        int seiten = 11; // Hier die Anzahl der Seiten eintragen
-        ArrayList<Integer> ziffern = new ArrayList<Integer>();
-        for (int i = 0; i < 10; i++) {
-            ziffern.add(0);
-        }
-        for (int i = 5; i <= seiten; i++) {
-            String seitenString = Integer.toString(i);
-            for (int j = 0; j < seitenString.length(); j++) {
-                int ziffer = Character.getNumericValue(seitenString.charAt(j));
-                ziffern.set(ziffer, ziffern.get(ziffer) + 1);
-            }
-        }
-        System.out.println("Für " + seiten + " Seiten benötigst du folgende Ziffern:");
-        for (int i = 0; i < 10; i++) {
-            System.out.println(i + ": " + ziffern.get(i));
-        }
-    }
-}
-
-Dieses Programm verwendet eine ArrayList von [0] bis 9, um die Anzahl der benötigten Ziffern zu speichern. Es durchläuft dann alle Seiten ab Seite 5 und zählt die Anzahl der Vorkommen jeder Ziffer in den Seitennummern.
-Wenn du das Programm ausführst und 11 als Anzahl der Seiten eingibst, erhältst du folgende Ausgabe:
-Für 11 Seiten benötigst du folgende Ziffern:
-0: 1
-1: 3
-2: 0
-3: 0
-4: 0
-5: 1
-6: 1
-7: 1
-8: 1
-9: 1
-Erklärung des Codes:
-Der Code berechnet die Anzahl der Vorkommen jeder Ziffer in den Seitenzahlen eines Buches.
-
-Es wird eine ArrayList mit dem Namen "ziffern" erstellt, um die Anzahl der Vorkommen jeder Ziffer zu speichern.
-In einer Schleife werden 10 Elemente mit dem Wert 0 zur "ziffern"-ArrayList hinzugefügt. Jedes Element repräsentiert eine Ziffer von 0 bis In einer weiteren Schleife wird jede Seite von 5 bis zur angegebenen Seitenzahl durchlaufen.
-Für jede Seite wird der Seitenzahl-Integer in einen String konvertiert.
-In einer inneren Schleife wird jeder einzelne Charakter des Seitenzahl-Strings durchlaufen.
-Der Charakter wird in eine Ziffer umgewandelt und in der "ziffern"-ArrayList erhöht.
- Am Ende werden die Ergebnisse ausgegeben, indem die Anzahl der Vorkommen jeder Ziffer in einer Schleife angezeigt wird.
-
-Zusammenfassend berechnet der Code die Anzahl der Vorkommen jeder Ziffer in den Seitenzahlen eines Buches und gibt die Ergebnisse aus.
-
 —------------------------------------------------------------------
+    
 # 7
-
 
 Bubblesort
 
@@ -508,6 +531,7 @@ Zusammenfassend implementiert der Code den Bubble-Sort-Algorithmus zur Sortierun
 
 
 —------------------------------------------------------------------
+    
  # 8
 
 Fibonacci
@@ -560,13 +584,17 @@ public class Fibonacci {
 }
 
 Erklärung des Codes:
+
 Der oben gegebene Code ist eine Java-Implementierung des Fibonacci-Zahlen-Algorithmus.
-Die Klasse "Fibonacci" enthält die main-Methode, die den Code ausführt. Zuerst werden die ersten beiden Zahlen der Fibonacci-Folge festgelegt: n1 = 0 und n2 = 1. Dann wird eine Variable "n" initialisiert, um die aktuelle Zahl zu speichern. Die ersten beiden Zahlen werden ausgegeben (0 und 1). 
- Der Code verwendet eine Schleife, um die restlichen Zahlen der Fibonacci-Folge zu berechnen, solange die aktuelle Zahl "n" kleiner als 500 ist. In jedem Schleifendurchlauf werden die beiden vorherigen Zahlen addiert, um die aktuelle Zahl zu erhalten. Wenn die aktuelle Zahl kleiner als 500 ist, wird sie ausgegeben. 
- Nachdem die aktuelle Zahl ausgegeben wurde, werden die Variablen "n1" und "n2" aktualisiert, um die nächsten beiden Zahlen in der Folge zu speichern. Dieser Vorgang wird fortgesetzt, bis die aktuelle Zahl "n" 500 erreicht oder überschreitet. 
+Die Klasse "Fibonacci" enthält die main-Methode, die den Code ausführt. Zuerst werden die ersten beiden Zahlen 
+der Fibonacci-Folge festgelegt: n1 = 0 und n2 = 1. Dann wird eine Variable "n" initialisiert, um die aktuelle Zahl zu speichern.
+Die ersten beiden Zahlen werden ausgegeben (0 und 1). 
+Der Code verwendet eine Schleife, um die restlichen Zahlen der Fibonacci-Folge zu berechnen, solange die aktuelle Zahl "n" kleiner als 500 ist. 
+In jedem Schleifendurchlauf werden die beiden vorherigen Zahlen addiert, um die aktuelle Zahl zu erhalten. Wenn die aktuelle Zahl kleiner als 500 ist, 
+wird sie ausgegeben. Nachdem die aktuelle Zahl ausgegeben wurde, werden die Variablen "n1" und "n2" aktualisiert, 
+um die nächsten beiden Zahlen in der Folge zu speichern. Dieser Vorgang wird fortgesetzt, bis die aktuelle Zahl "n" 500 erreicht oder überschreitet. 
+    
 —------------------------------------------------------------------
-
-
 
  # 9
 
@@ -612,7 +640,9 @@ public class Quadratzahlen {
 }
 
 Erklärung des Codes:
-Dieser Code gibt alle Quadratzahlen von natürlichen Zahlen (1, 2, 3, ...) aus, die kleiner als 100 sind. Außerdem wird die Anzahl der gefundenen Quadratzahlen ausgegeben.
+
+Dieser Code gibt alle Quadratzahlen von natürlichen Zahlen (1, 2, 3, ...) aus, die kleiner als 100 sind. 
+Außerdem wird die Anzahl der gefundenen Quadratzahlen ausgegeben.
 Schritt 1: Initialisierung
 In der main()-Methode werden zwei Variablen initialisiert:
 n: Die aktuelle Zahl
@@ -630,7 +660,6 @@ Die Anzahl der gefundenen Quadratzahlen wird am Ende des Codes ausgegeben: Syste
 —------------------------------------------------------------------
 
  # 10
-
 
 Schreibe eine for Schleife, die Folgendes ausgibt: 100 90 80 70 60 50 40 30 20 10
 public class Zahlenabfolge_1 {
@@ -675,6 +704,7 @@ public class Zahlenabfolge_2 {
         }
     }
 }
+
 —------------------------------------------------------------------
 
 Schreibe eine for Schleife, die Folgendes ausgibt: 2.0 1.5 1.0 0.5 0.0 -0.5 -1.0
@@ -697,6 +727,7 @@ public class Zahlenabfolge_3 {
         }
     }
 }
+
 —------------------------------------------------------------------
 
 Schreibe eine for Schleife, die Folgendes ausgibt: 1,0 2,2 3,4 4,6 5,8 7,0 8,2 9,4
@@ -721,6 +752,7 @@ public class Zahlenabfolge_4 {
         }
     }
 }
+
 —------------------------------------------------------------------
 
 Schreibe eine for Schleife, die Folgendes ausgibt: 25 27 29 211 213
@@ -745,6 +777,7 @@ public class Zahlenabfolge_5 {
 }
 
 —------------------------------------------------------------------
+    
 Schreibe eine for Schleife, die Folgendes ausgibt: a2b3 a12b13 822623
 public class Zahlenabfolge_6 {
 
@@ -771,6 +804,7 @@ public class Zahlenabfolge_6 {
 }
 
 —------------------------------------------------------------------
+    
 Schreibe eine for-Schleife, die Folgendes ausgibt:  13 17 21 29 33 37 45
 public class Zahlenabfolge_7 {
 
@@ -793,6 +827,7 @@ public class Zahlenabfolge_7 {
 }
 
 —------------------------------------------------------------------
+    
 Schreibe EINE for-Schleife, die Folgendes ausgibt: 123454321
 public class Zahlenabfolge_8 {
 
@@ -807,6 +842,7 @@ public class Zahlenabfolge_8 {
 }
 
 —------------------------------------------------------------------
+    
 Schreibe ein Programm, das per For-Schleife alle Zahlen von 1 bis 20 addiert und danach das Endergebnis ausgibt.
 public class Zahlenabfolge_9 {
 
@@ -835,13 +871,13 @@ Die Summe wird in einer For-Schleife berechnet.
 In der for-Schleife wird die aktuelle Zahl zur Summe addiert.
 Die Summe wird ausgegeben.
 
-
 —------------------------------------------------------------------
 
  # 11
 
 
-Erstellen Sie ein Programm und verwenden Sie möglichst viele der aufgeführten Escape Sequenzen, in dem Sie sie mit System.out.println() ausgeben. 
+Erstellen Sie ein Programm und verwenden Sie möglichst viele der aufgeführten Escape Sequenzen, 
+in dem Sie sie mit System.out.println() ausgeben. 
 
 
 Lösung:
@@ -889,13 +925,13 @@ public class EscapeSequenzen {
             }
 }
 
-
 —------------------------------------------------------------------
 
  # 12
 
 Schreiben Sie ein Programm Kreis.java, in welchem Sie dem Nutzer die Möglichkeit geben, den Radius einzugeben.
-Formel für die Berechnung der Kreisfläche:                         	F = π * r²
+    
+Formel für die Berechnung der Kreisfläche:                      F = π * r²
 Formel für die Berechnung des Kreisumfangs:                   	U = 2 * π  * r
 
 Lösung:
@@ -927,20 +963,31 @@ public class Kreis {
 }
 
 Erklärung des Codes:
+
 In der main()-Methode wird die Konstante PI definiert.
 Der Benutzer wird aufgefordert, den Radius einzugeben.
 Der Radius wird als double-Wert gespeichert.
 Die Kreisfläche wird mit der Formel F = π * r² berechnet.
 Der Kreisumfang wird mit der Formel U = 2 * π * r berechnet.
 Die Ergebnisse werden ausgegeben.
-Dieser Code definiert eine Klasse namens "Kreis_1", die eine Methode namens "main" enthält. In der Methode wird zuerst die Konstante "PI" definiert und dann der Benutzer aufgefordert, den Radius des Kreises einzugeben. Anschließend werden die Fläche und der Umfang des Kreises berechnet und ausgegeben. Der Code verwendet die Formeln für die Berechnung der Kreisfläche (πr²) und des Kreisumfangs (2πr), wobei "r" der Radius des Kreises ist.
+    
+Dieser Code definiert eine Klasse namens "Kreis_1", die eine Methode namens "main" enthält. 
+In der Methode wird zuerst die Konstante "PI" definiert und dann der Benutzer aufgefordert, 
+den Radius des Kreises einzugeben. 
+Anschließend werden die Fläche und der Umfang des Kreises berechnet und ausgegeben. 
+Der Code verwendet die Formeln für die Berechnung der Kreisfläche (πr²) 
+und des Kreisumfangs (2πr), wobei "r" der Radius des Kreises ist.
+    
 Kommentar:
-Die Konstante PI ist eine mathematische Konstante, die das Verhältnis des Umfangs eines Kreises zu seinem Durchmesser beschreibt.
+    
+Die Konstante PI ist eine mathematische Konstante, die das Verhältnis des Umfangs 
+eines Kreises zu seinem Durchmesser beschreibt.
 Der Radius ist der Abstand vom Mittelpunkt eines Kreises zu seiner Peripherie.
 Die Kreisfläche ist die Fläche, die von einem Kreis eingeschlossen wird.
 Der Kreisumfang ist die Länge der Linie, die den Kreis umschließt.
 
 —------------------------------------------------------------------
+    
 Variante 2
 
 public class Kreis_2 {
@@ -966,6 +1013,341 @@ public class Kreis_2 {
     }
 }
 
-Dieser Code berechnet die Fläche und den Umfang eines Kreises basierend auf der Benutzereingabe für den Radius. Das Programm fordert den Benutzer zur Eingabe des Radius auf und berechnet dann die Fläche mithilfe der Formel Math.PI * Radius * Radius und den Umfang mithilfe der Formel 2 * Math.PI * Radius. Schließlich werden die berechnete Fläche und der Umfang des Kreises angezeigt.
+Dieser Code berechnet die Fläche und den Umfang eines Kreises basierend auf der Benutzereingabe für den Radius. 
+Das Programm fordert den Benutzer zur Eingabe des Radius auf und berechnet dann die Fläche mithilfe 
+der Formel Math.PI * Radius * Radius und den Umfang mithilfe der Formel 2 * Math.PI * Radius. Schließlich 
+werden die berechnete Fläche und der Umfang des Kreises angezeigt.
 —---------------------------------------------------------------
+20.10.2023
  # 13
+
+
+
+Cäsar-Chiffre bruteforcen
+
+Schreibe ein Programm das alle möglichen Lösungen
+eines Cäsar-chiffrierten Strings ausgibt.
+
+Was bedeutet "vxumxgssokxkt sginz yvgyy"?
+
+Wer Cäsar-Chiffre nicht kennt: https://de.wikipedia.org/wiki/Caesar-Verschlüsselung 
+
+
+Lösung:
+
+import java.util.Scanner;
+
+
+public class CaesarBruteForce {
+
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Bitte geben Sie den verschlüsselten Text ein:");
+        String encryptedText = scanner.nextLine();
+        scanner.close();
+
+
+        for (int i = 1; i <= 26; i++) {
+            String decryptedText = decrypt(encryptedText, i);
+            System.out.println("Verschiebung: " + i + ", Entschlüsselter Text: " + decryptedText);
+        }
+    }
+
+
+    public static String decrypt(String encryptedText, int shift) {
+        StringBuilder decryptedText = new StringBuilder();
+        for (int i = 0; i < encryptedText.length(); i++) {
+            char c = encryptedText.charAt(i);
+            if (c >= 'a' && c <= 'z') {
+                c = (char) (c - shift);
+                if (c < 'a') {
+                    c += 26;
+                }
+            } else if (c >= 'A' && c <= 'Z') {
+                c = (char) (c - shift);
+                if (c < 'A') {
+                    c += 26;
+                }
+            }
+            decryptedText.append(c);
+        }
+        return decryptedText.toString();
+    }
+}
+
+Erklärung des Codes:
+Der Code implementiert eine Caesar-Verschlüsselung und Brute-Force-Methode zum Entschlüsseln eines verschlüsselten Textes.
+
+1. Es wird die Scanner-Klasse importiert, um Benutzereingaben zu lesen.
+2. Die Klasse Caesar BruteForce wird definiert.
+3. In der main-Methode wird ein Scanner-Objekt erstellt, um Benutzereingaben zu lesen.
+4. Der Benutzer wird aufgefordert, den verschlüsselten Text einzugeben.
+5. Der eingegebene Text wird in der Variable encryptedText gespeichert.
+6. Der Scanner wird geschlossen.
+7. Eine Schleife wird gestartet, um alle möglichen Verschiebungen von 1 bis 26 durchzugehen.
+8. Für jede Verschiebung wird die decrypt-Methode aufgerufen, 
+um den verschlüsselten Text mit der aktuellen Verschiebung zu entschlüsseln.
+9. Der entschlüsselte Text und die Verschiebung werden ausgegeben.
+10. Die decrypt-Methode nimmt den verschlüsselten Text und die Verschiebung als 
+Parameter entgegen und gibt den entschlüsselten Text zurück.
+11. Ein StringBuilder-Objekt decryptedText wird erstellt, um den entschlüsselten Text zu speichern.
+12. Eine Schleife wird gestartet, um jeden Buchstaben im verschlüsselten Text zu überprüfen.
+13. Wenn der Buchstabe ein Kleinbuchstabe ist, wird er um die Verschiebung 
+zurückverschoben und gegebenenfalls wieder auf den Anfang des Alphabets zurückgesetzt.
+14. Wenn der Buchstabe ein Großbuchstabe ist, wird er auf ähnliche Weise wie der Kleinbuchstabe verschoben.
+15. Der entschlüsselte Buchstabe wird dem decryptedText hinzugefügt.
+16. Der entschlüsselte Text wird als String zurückgegeben.
+
+Zusammenfassend implementiert der Code eine Caesar-Verschlüsselung, die den verschlüsselten 
+Text mit allen möglichen Verschiebungen von 1 bis 26 entschlüsselt und den entschlüsselten 
+Text für jede Verschiebung ausgibt.
+
+—--------------------------------------------------------------------
+
+ # 13
+
+Einmaliges in ArrayList
+
+Schreibe ein Programm, das eine ArrayList mit neun Zahlen befüllt.
+Dabei sollen vier Zahlen doppelt vorkommen und eine Zahl nur einmal.
+Mische dann die ArrayList per Collections.shuffle(ArrayList)
+
+Schreibe dann ein Programm, das aus dieser ArrayList die Zahl findet, die nur einmal vorkommt.
+
+
+Lösung:
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+
+
+public class EinmaligeZahl {
+
+
+    public static void main(String[] args) {
+        // Erstelle eine ArrayList mit neun Zahlen
+        ArrayList<Integer> zahlen = new ArrayList<>();
+        for (int i = 0; i < 9; i++) {
+            zahlen.add(i);
+        }
+
+
+        // Füge die Zahlen viermal zur ArrayList hinzu
+        for (int i = 0; i < 4; i++) {
+            zahlen.add(zahlen.get(i));
+        }
+
+
+        // Mische die ArrayList
+        Collections.shuffle(zahlen);
+
+
+        // Erstelle ein Hash-Set für die doppelt vorkommenden Zahlen
+        HashSet<Integer> doppeltVorkommendeZahlen = new HashSet<>();
+        for (int i = 0; i < 4; i++) {
+            doppeltVorkommendeZahlen.add(zahlen.get(i));
+        }
+
+
+        // Finde die Zahl, die nur einmal vorkommt
+        int einmaligeZahl = zahlen.get(0);
+        while (doppeltVorkommendeZahlen.contains(einmaligeZahl)) {
+            einmaligeZahl = zahlen.get(zahlen.indexOf(einmaligeZahl) + 1);
+        }
+
+
+        // Gib die Zahl aus
+        System.out.println("Die einmalige Zahl ist: " + einmaligeZahl);
+    }
+}
+
+Erklärung des Codes:
+Die Methode main() erstellt eine ArrayList mit neun Zahlen.
+Die Methode main() fügt die Zahlen viermal zur ArrayList hinzu.
+Die Methode main() mischt die ArrayList.
+Die Methode main() erstellt ein Hash-Set für die doppelt vorkommenden Zahlen.
+Die Methode main() setzt die Variable einmalige Zahl auf den ersten Wert der ArrayList.
+Die Methode main() iteriert über die ArrayList und sucht nach einer Zahl, die nicht im Hash-Set enthalten ist
+Der Code erstellt eine Liste von Zahlen und findet die Zahl, die nur einmal in der Liste vorkommt.
+1. Es wird die ArrayList-Klasse importiert, um eine Liste von Zahlen zu erstellen.
+2. Es wird auch die Collections-Klasse importiert, um die Liste zu mischen.
+3. Es wird die HashSet-Klasse importiert, um doppelt vorkommende Zahlen zu speichern.
+4. Die Klasse EinmaligeZahl wird definiert.
+5. In der main-Methode wird eine ArrayList namens "zahlen" erstellt und mit den Zahlen von 0 bis 8 initialisiert.
+6. Eine Schleife wird verwendet, um die Zahlen viermal zur ArrayList hinzuzufügen.
+7. Die ArrayList wird gemischt, um die Reihenfolge der Zahlen zu ändern.
+8. Ein HashSet namens "doppeltVorkommendeZahlen" wird erstellt, um die doppelt vorkommenden Zahlen zu speichern.
+9. Eine Schleife wird verwendet, um die ersten vier Zahlen in das HashSet hinzuzufügen.
+10. Die Zahl, die nur einmal vorkommt, wird initialisiert, indem die erste Zahl aus der ArrayList genommen wird.
+11. Eine Schleife wird gestartet, um die Zahl zu finden, die nur einmal vorkommt.
+12. Solange die doppeltVorkommendeZahlen das einmaligeZahl enthält, wird die nächste 
+Zahl in der ArrayList als einmaligeZahl betrachtet.
+13. Die gefundene einmalige Zahl wird ausgegeben.
+Zusammenfassend erstellt der Code eine Liste von Zahlen, findet die Zahl, 
+die nur einmal in der Liste vorkommt, und gibt sie aus.
+
+—--------------------------------------------------------------------
+
+ # 14
+
+
+Multiplikation
+
+Schreibe ein Programm, das ermittelt, wie viele ganzzahlige Multiplikator-Multiplikand-Kombinationen
+vom Produkt 8.420.000 es gibt, bei denen sowohl Multiplikator, als auch Multiplikand kleiner als 10.000 sind.
+
+1000*8420 und 8420*1000 ist nur eine Kombination
+
+
+Lösung:
+
+import java.util.ArrayList;
+
+
+public class Multiplikation {
+
+
+    public static void main(String[] args) {
+        // Das Produkt 8.420.000 besteht aus den Faktoren 8420 und 1000.
+        // Der Multiplikator kann also zwischen 1 und 8420 liegen,
+        // der Multiplikand kann also zwischen 1 und 1000 liegen.
+
+
+        // Erstelle eine ArrayList, um alle möglichen Kombinationen zu speichern.
+        ArrayList<Pair<Integer, Integer>> combinations = new ArrayList<>();
+
+
+        // Iteriere über alle möglichen Werte für den Multiplikator.
+        for (int i = 1; i <= 8420; i++) {
+            // Iteriere über alle möglichen Werte für den Multiplikand.
+            for (int j = 1; j <= 1000; j++) {
+                // Füge die Kombination zur ArrayList hinzu.
+                combinations.add(new Pair<>(i, j));
+            }
+        }
+
+
+        // Gib die Anzahl der Kombinationen aus.
+        System.out.println("Es gibt " + combinations.size() + " Kombinationen.");
+    }
+
+
+    // Eine Klasse, die ein Paar aus zwei Integer-Werten darstellt.
+    static class Pair<X, Y> {
+        X x;
+        Y y;
+
+
+        public Pair(X x, Y y) {
+            this.x = x;
+            this.y = y;
+        }
+    }
+}
+
+Erklärung des Codes:
+
+Die Methode main() erstellt eine ArrayList, um alle möglichen Kombinationen zu speichern.
+Die Methode main() iteriert über alle möglichen Werte für den Multiplikator.
+Die Methode main() iteriert über alle möglichen Werte für den Multiplikand.
+Die Methode main() fügt die Kombination zur ArrayList hinzu.
+Die Methode main() gibt die Anzahl der Kombinationen aus.
+Der Code erstellt alle möglichen Kombinationen von Multiplikator und Multiplikand, um das Produkt 8.420.000 zu erhalten.
+1. Es wird die ArrayList-Klasse importiert, um eine Liste von Kombinationen zu erstellen.
+2. Die Klasse Multiplikation wird definiert.
+3. In der main-Methode wird eine ArrayList namens "combinations" erstellt, um alle möglichen Kombinationen zu speichern.
+4. Eine äußere Schleife wird gestartet, um alle möglichen Werte für den Multiplikator von 1 bis 8420 zu durchlaufen.
+5. Eine innere Schleife wird gestartet, um alle möglichen Werte für den Multiplikand von 1 bis 1000 zu durchlaufen.
+6. Für jede Kombination von Multiplikator und Multiplikand wird ein neues Pair-Objekt erstellt und zur ArrayList 
+"combinations" hinzugefügt.
+7. Am Ende wird die Anzahl der Kombinationen in der ArrayList ausgegeben.
+Zusammenfassend erstellt der Code alle möglichen Kombinationen von Multiplikator und Multiplikand, 
+um das Produkt 8.420.000 zu erhalten, und gibt die Anzahl der Kombinationen aus.
+
+
+
+—--------------------------------------------------------------------
+
+ # 15
+
+
+Portokosten
+
+Die Portokosten sind wie folgt festgelegt: 
+0 - 39.99€ Bestellwert kosten 3.99€ Porto
+40 - 69.99€ Bestellwert kosten 2.99€ Porto
+70 - 99.99€ Bestellwert kosten 1.99€ Porto
+ab 100€ ist portofrei
+
+Es soll eine Zufallszahl ($bestellwert)
+von 1.00 - 130.00 erzeugt werden (z. B. 40.47, 123.78)
+Dann soll ermittelt werden,
+wie hoch die entsprechenden Portokosten sind.
+Am Ende sollen der Bestellwert,
+die Portokosten und der Gesamtbetrag
+ausgegeben werden: "Bei einem Bestellwert von 67,54 € betragen die
+Portokosten 2,99 €. Der Gesamtbetrag beträgt somit 70,53 €"
+
+
+Lösung:
+
+import java.util.Random;
+
+
+public class Portokosten {
+
+
+    public static void main(String[] args) {
+        // Erstelle eine Zufallszahl für den Bestellwert.
+        Random random = new Random();
+        int bestellwert = random.nextInt(130) + 1;
+
+
+        // Ermittele die Portokosten.
+        double portokosten = 0;
+        if (bestellwert <= 39.99) {
+            portokosten = 3.99;
+        } else if (bestellwert <= 69.99) {
+            portokosten = 2.99;
+        } else if (bestellwert <= 99.99) {
+            portokosten = 1.99;
+        }
+
+
+        // Berechne den Gesamtbetrag.
+        double gesamtbetrag = bestellwert + portokosten;
+
+
+        // Gib die Ergebnisse aus.
+        System.out.println("Bei einem Bestellwert von " + bestellwert + " € betragen die Portokosten " + portokosten
+                + " €. Der Gesamtbetrag beträgt somit " + gesamtbetrag + " €.");
+    }
+}
+
+Erklärung des Codes:
+Die Methode main() erstellt eine Zufallszahl für den Bestellwert.
+Die Methode main() ermittelt die Portokosten, indem sie eine if-Anweisung verwendet, 
+um den Bestellwert zu überprüfen.
+Die Methode main() berechnet den Gesamtbetrag, indem sie die Portokosten zum Bestellwert addiert.
+Die Methode main() gibt die Ergebnisse aus.
+Der Code berechnet die Portokosten basierend auf einem zufälligen Bestellwert.
+1. Es wird die Random-Klasse importiert, um eine Zufallszahl zu generieren.
+2. Die Klasse Portokosten wird definiert.
+3. In der main-Methode wird ein Random-Objekt erstellt.
+4. Eine Zufallszahl für den Bestellwert wird generiert, wobei der Wert zwischen 1 und 130 liegt.
+5. Eine Variable portokosten wird initialisiert.
+6. Anhand des Bestellwerts wird der Portokostenbetrag ermittelt:
+   - Wenn der Bestellwert kleiner oder gleich 39.99 ist, werden die Portokosten auf 3.99 gesetzt.
+   - Wenn der Bestellwert kleiner oder gleich 69.99 ist, werden die Portokosten auf 2.99 gesetzt.
+   - Wenn der Bestellwert kleiner oder gleich 99.99 ist, werden die Portokosten auf 1.99 gesetzt.
+7. Der Gesamtbetrag wird berechnet, indem der Bestellwert und die Portokosten addiert werden.
+8. Die Ergebnisse werden ausgegeben, indem der Bestellwert, die Portokosten und der Gesamtbetrag 
+in einer formatierten Zeichenkette angezeigt werden.
+Zusammenfassend berechnet der Code die Portokosten basierend auf einem zufälligen Bestellwert 
+und gibt den Bestellwert, die Portokosten und den Gesamtbetrag aus.
+—--------------------------------------------------------------------
+
+ # 16
+
