@@ -1356,7 +1356,347 @@ Der Code berechnet die Portokosten basierend auf einem zufälligen Bestellwert.
 in einer formatierten Zeichenkette angezeigt werden.
 Zusammenfassend berechnet der Code die Portokosten basierend auf einem zufälligen Bestellwert 
 und gibt den Bestellwert, die Portokosten und den Gesamtbetrag aus.
+
 —--------------------------------------------------------------------
 
- # 16
+23.10.2023
+
+# 16
+
+
+
+Simuliert eine einfache Texteditor-App mit Undo-Funktionalität.
+Es wird eine LinkedList für die Undo-Operationen verwendet.
+
+import java.util.LinkedList;
+
+
+/**
+ * Simuliert eine einfache Texteditor-App mit Undo-Funktionalität.
+ * Es wird eine LinkedList für die Undo-Operationen verwendet.
+ */
+public class _261_TextEditor {
+    private String aktuellerText = ""; // Der aktuelle Text
+    private LinkedList<String> undoVerlauf = new LinkedList<>(); // Der Undo-Verlauf
+
+
+    public static void main(String[] args) {
+        _261_TextEditor editor = new _261_TextEditor();
+        editor.textHinzufuegen("Hallo"); // Fügt den Text "Hallo" hinzu
+        editor.textHinzufuegen(" Welt "); // Fügt den Text " Welt" hinzu
+        System.out.println("Aktueller Text: " + editor.aktuellerText); // Gibt den aktuellen Text aus
+        editor.undo(); // Führt die letzte Undo-Operation aus
+        System.out.println("Nach Undo: " + editor.aktuellerText); // Gibt den aktuellen Text nach dem Undo aus
+        editor.textHinzufuegen(" Leute "); // Fügt den Text " Leute" hinzu
+        System.out.println("Aktueller Text: " + editor.aktuellerText); // Gibt den aktuellen Text nach dem Hinzufügen
+                                                                       // von " Leute" aus
+        editor.undo(); // Führt die letzte Undo-Operation aus
+        System.out.println("Nach Undo: " + editor.aktuellerText); // Gibt den aktuellen Text nach dem zweiten Undo aus
+        editor.historyZeigen(); // Gibt den Undo-Verlauf aus
+    }
+
+
+    /**
+     * Fügt den angegebenen Text am Anfang des aktuellen Textes an.
+     *
+     * @param neuerText Der Text, der hinzugefügt werden soll.
+     */
+    public void textHinzufuegen(String neuerText) {
+        // Fügt den angegebenen Text am Anfang des aktuellen Textes an
+        aktuellerText = neuerText + aktuellerText;
+        // Fügt die aktuelle Textversion in den Undo-Verlauf ein
+        undoVerlauf.addLast(aktuellerText);
+    }
+
+
+    /**
+     * Führt die letzte Undo-Operation zurück.
+     */
+    public void undo() {
+        // Prüft, ob der Undo-Verlauf leer ist
+        if (!undoVerlauf.isEmpty()) {
+            // Entfernt die letzte Textversion aus dem Undo-Verlauf
+            aktuellerText = undoVerlauf.removeLast();
+        }
+    }
+
+
+    /**
+     * Gibt den Inhalt des Undo-Verlaufs aus.
+     */
+    public void historyZeigen() {
+        // Gibt den Undo-Verlauf aus
+        System.out.println("Undo-Verlauf:");
+        for (String text : undoVerlauf) {
+            System.out.println(text);
+        }
+    }
+}
+
+Erklärung des Codes:
+Der Code simuliert eine einfache Texteditor-App mit Undo-Funktionalität. Dazu wird eine LinkedList verwendet, um den Verlauf der Änderungen zu speichern.
+Die Klasse _261_TextEditor hat drei Attribute:
+aktuellerText: Der aktuelle Text, der im Texteditor angezeigt wird.
+undoVerlauf: Der Verlauf der Änderungen, die am aktuellen Text vorgenommen wurden.
+textHinzufuegen(): Fügt den angegebenen Text am Anfang des aktuellen Textes an.
+undo(): Führt die letzte Undo-Operation aus.
+historyZeigen(): Gibt den Inhalt des Undo-Verlaufs aus.
+Der main()-Methode des Codes erstellt ein neues Objekt der Klasse _261_TextEditor und ruft die Methoden textHinzufuegen() und undo() auf. Die Methode textHinzufuegen() fügt den angegebenen Text am Anfang des aktuellen Textes an. Die Methode undo() führt die letzte Undo-Operation aus, indem sie den vorherigen Text aus dem Undo-Verlauf entfernt und als aktuellen Text setzt.
+Im Folgenden wird der Code Schritt für Schritt erklärt:
+Die Methode textHinzufuegen() wird mit dem Text "Hallo" aufgerufen.
+Die Methode textHinzufuegen() wird mit dem Text " Welt" aufgerufen.
+Der aktuelle Text wird ausgegeben.
+Die Methode undo() wird aufgerufen.
+Der aktuelle Text wird erneut ausgegeben.
+Die Methode textHinzufuegen() wird mit dem Text " Leute" aufgerufen.
+Der aktuelle Text wird erneut ausgegeben.
+Die Methode undo() wird erneut aufgerufen.
+Der aktuelle Text wird erneut ausgegeben.
+Die Methode historyZeigen() wird aufgerufen.
+Die Ausgabe des Codes lautet wie folgt:
+Aktueller Text: Hallo Welt
+Nach Undo: Hallo
+Nach Undo: Hallo Leute
+
+
+Der Undo-Verlauf enthält folgende Elemente:
+Hallo Welt
+Hallo
+
+—-----------------------------------------------------
+
+# 17
+
+Erstelle die Methoden der App. Beachte das bereits ein Stack als Attribut vorgegeben ist
+import java.util.Stack;
+
+
+/**
+ * Erstelle die Methoden der App. Beachte das bereits ein Stack als Attribut
+ * vorgegeben ist
+ */
+public class _271_AppNavigation {
+    public static void main(String[] args) {
+        _271_AppNavigation app = new _271_AppNavigation();
+        app.seiteOeffnen(new Seite("Startseite", "Willkommen in unserer App!"));
+        app.seiteOeffnen(new Seite("Menü", "1. Option A\n2. Option B\n3. Option C"));
+        app.seiteOeffnen(new Seite("Detailseite", "Details zu Option B"));
+
+
+        app.aktuelleSeiteAnzeigen();
+        app.zurueckGehen();
+        app.aktuelleSeiteAnzeigen();
+        app.zurueckGehen();
+        app.aktuelleSeiteAnzeigen();
+    }
+
+
+    private Stack<Seite> seitenHistorie = new Stack<>();
+
+
+    /**
+     * Öffnet eine neue Seite und speichert sie in der Historie.
+     *
+     * @param aktuelleSeite Die neue Seite
+     */
+    public void seiteOeffnen(Seite aktuelleSeite) {
+        // Fügt die aktuelle Seite in die Historie ein
+        seitenHistorie.push(aktuelleSeite);
+    }
+
+
+    /**
+     * Navigiert zur vorherigen Seite in der Historie.
+     */
+    public void zurueckGehen() {
+        // Prüft, ob die Historie nicht leer ist
+        if (!seitenHistorie.isEmpty()) {
+            // Entfernt die oberste Seite aus der Historie
+            seitenHistorie.pop();
+        }
+    }
+
+
+    /**
+     * Gibt die aktuelle Seite aus.
+     */
+    public void aktuelleSeiteAnzeigen() {
+        // Prüft, ob die Historie nicht leer ist
+        if (!seitenHistorie.isEmpty()) {
+            // Gibt die oberste Seite aus der Historie aus
+            System.out.println(seitenHistorie.peek());
+        } else {
+            // Gibt eine leere Zeile aus
+            System.out.println();
+        }
+    }
+
+
+    private static class Seite {
+        private String seitenName;
+        private String inhalt;
+
+
+        public Seite(String seitenName, String inhalt) {
+            this.seitenName = seitenName;
+            this.inhalt = inhalt;
+        }
+
+
+        @Override
+        public String toString() {
+            return "\"" + seitenName + "\" - " + inhalt;
+        }
+    }
+}
+
+
+Erklärung des Codes:
+
+
+Code demonstriert die App-Navigation mithilfe einer Stack-Datenstruktur:
+
+- Der Code beginnt mit dem Import der  `Stack` -Klasse aus dem Paket  `java.util` .
+
+- Die Hauptklasse heißt  '271 App Navigation'  und enthält die  'Main' -Methode. 
+Sie erstellt eine Instanz der Klasse und führt einige App-Navigation Operationen durch.
+
+- Die Klasse hat auch ein privates Attribut  `seitenHistorie` , das ein Stack von  `Seite` -Objekten ist. 
+Dieser Stack wird verwendet, um die Navigation Historie zu speichern.
+
+- Die Klasse hat drei Methoden:
+  1.  'seite Öffnen' : Diese Methode nimmt ein  `Seite` -Objekt als Parameter entgegen und fügt es dem Historien-Stack hinzu.
+  2.  'zurückGehen' : Diese Methode entfernt die oberste Seite aus dem Historien-Stack und simuliert das Zurückgehen zur vorherigen Seite.
+  3.  'aktuelle Seite Anzeigt' : Diese Methode zeigt die aktuelle Seite an, indem sie die oberste Seite aus dem Historien-Stack ausgibt.
+
+- Die Klasse  `Seite`  ist eine statische innere Klasse in  '271 App Navigation' . 
+Sie repräsentiert eine Seite und hat zwei Attribute:  `seitenName`  (Seitenname) und  'Inhalt'  (Seiteninhalt).
+
+- Die  `Seite` -Klasse überschreibt die  `toString` -Methode, um eine formatierte Zeichenfolge zu liefern, 
+die eine Seite darstellt.
+
+In der  `main` -Methode wird die App-Navigation simuliert, indem verschiedene Seiten geöffnet, 
+die aktuelle Seite angezeigt und zur vorherigen Seite zurückgegangen wird.
+
+—-----------------------------------------------------
+
+# 18
+
+Erstelle die Methoden der ServerQueue,
+beachte, dass bereits ein Queue als Attribut vorgegeben ist.
+
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+
+/**
+ * Erstelle die Methoden der ServerQueue,
+ * beachte, dass bereits ein Queue als Attribut vorgegeben ist.
+ */
+public class _281_Server {
+
+
+    public static void main(String[] args) {
+        _281_Server serverQueue = new _281_Server();
+        serverQueue.userHatWasGeclicked("GET");
+        serverQueue.userHatWasGeclicked("POST");
+        serverQueue.userHatWasGeclicked("DELETE");
+        serverQueue.showQueue();
+        System.out.println("erledigt: " + serverQueue.aufgabeErledigt());
+        serverQueue.showQueue();
+        System.out.println("Queue size: " + serverQueue.size());
+    }
+
+
+    private Queue<String> data = new LinkedList<>();
+
+
+    /**
+     * Fügt eine neue Aufgabe in die Queue ein.
+     *
+     * @param requestType Der Typ der Aufgabe
+     */
+    public void userHatWasGeclicked(String requestType) {
+        // Fügt die neue Aufgabe in die Queue ein
+        data.add(requestType);
+    }
+
+
+    /**
+     * Markiert eine Aufgabe als erledigt.
+     *
+     * @return Der Typ der erledigten Aufgabe
+     */
+    public String aufgabeErledigt() {
+        // Prüft, ob die Queue nicht leer ist
+        if (!data.isEmpty()) {
+            // Entfernt die erste Aufgabe aus der Queue
+            String requestType = data.poll();
+            // Gibt den Typ der erledigten Aufgabe zurück
+            return requestType;
+        } else {
+            // Gibt einen leeren String zurück
+            return "";
+        }
+    }
+
+
+    /**
+     * Gibt die Aufgaben in der Queue aus.
+     */
+    public void showQueue() {
+        // Prüft, ob die Queue nicht leer ist
+        if (!data.isEmpty()) {
+            // Gibt alle Aufgaben in der Queue aus
+            for (String requestType : data) {
+                System.out.println(requestType);
+            }
+        } else {
+            // Gibt eine leere Zeile aus
+            System.out.println();
+        }
+    }
+
+
+    /**
+     * Gibt die Größe der Queue zurück.
+     *
+     * @return Die Größe der Queue
+     */
+    public int size() {
+        // Gibt die Größe der Queue zurück
+        return data.size();
+    }
+}
+
+Erklärung des Codes:
+
+Dies ist ein Java-Code, der die Verwendung einer Warteschlange (Queue) zur Verwaltung 
+von Aufgaben in einem Server demonstriert. Hier ist eine Erklärung des Codes:
+- Der Code beginnt mit dem Import der Klassen  `LinkedList`  und  `Queue`  aus dem Paket  `java.util` .
+- Die Hauptklasse heißt  `_281_Server`  und enthält die  `main` -Methode. 
+Sie erstellt eine Instanz der Klasse und führt einige Operationen mit der Server-Warteschlange durch.
+
+- Die Klasse hat auch ein privates Attribut  `data` , das eine Queue von Zeichenketten (Strings) ist. 
+Diese Queue wird verwendet, um die Aufgaben zu speichern.
+- Die Klasse hat vier Methoden:
+  1.  `userHatWasGeclicked` : Diese Methode nimmt einen Aufgabentyp als Parameter entgegen und fügt ihn der Warteschlange hinzu.
+  2.  `aufgabeErledigt` : Diese Methode markiert die erste Aufgabe in der Warteschlange als erledigt und gibt ihren Typ zurück.
+  3.  `showQueue` : Diese Methode gibt alle Aufgaben in der Warteschlange aus.
+  4.  `size` : Diese Methode gibt die Größe der Warteschlange zurück.
+
+- In der  `main` -Methode werden verschiedene Aufgaben in die Warteschlange eingefügt, 
+die Warteschlange wird angezeigt und eine Aufgabe wird als erledigt markiert. 
+Außerdem wird die Größe der Warteschlange ausgegeben.
+Die Warteschlange wird mithilfe der  `LinkedList` -Implementierung der  `Queue` -Schnittstelle verwaltet. 
+Neue Aufgaben werden mit der  `add` -Methode hinzugefügt, und erledigte Aufgaben werden 
+mit der  `poll` -Methode entfernt. Die Größe der Warteschlange wird mit der  `size` -Methode abgerufen.
+
+
+—-----------------------------------------------------
+
+# 19
+
+
 
