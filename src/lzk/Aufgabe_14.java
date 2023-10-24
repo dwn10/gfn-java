@@ -1,6 +1,7 @@
 package lzk;
 
-public class Aufgabe_4 {
+public class Aufgabe_14 {
+
     public static void main(String[] args) {
         int summe = 0;
         for (int i = 1; i <= 5; i++) {
@@ -11,5 +12,8 @@ public class Aufgabe_4 {
 }
 
 /*
- * 15
+ * A) 10
+ * B) 12
+ * C) 15 ***
+ * D) 20
  */

@@ -1,12 +1,12 @@
 package lzk;
 
-public class Aufgabe_2 {
+public class Aufgabe_12 {
+
     public static void main(String[] args) {
         int a = 5;
         int b = 10;
         int result = verdopple(a) + halbiere(b);
         System.out.println(result);
-
     }
 
     public static int verdopple(int num) {
@@ -19,5 +19,8 @@ public class Aufgabe_2 {
 }
 
 /*
- * 15
+ * A) 12
+ * B) 15 ***
+ * C) 20
+ * D) 25
  */
