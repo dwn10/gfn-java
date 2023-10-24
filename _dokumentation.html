@@ -1698,5 +1698,266 @@ mit der  `poll` -Methode entfernt. Die Größe der Warteschlange wird mit der  `
 
 # 19
 
+public class _070_LogicalUndComparison 
+{ public static void main(String[] args) { 
+// Deklariere zwei Integer-Variablen 'a' und 'b' und weise ihnen Werte zu. 
+// Deklariere eine Boolean-Variable 'result'. // Verwende logische und Vergleichsoperatoren, um die folgenden Bedingungen zu 
+// überprüfen: 
+// - Ist 'a' größer als 10 und 'b' kleiner als 5? 
+// - Ist 'a' kleiner als 20 oder 'b' größer als 0? 
+// Weise die Ergebnisse der Bedingungen der Variable 'result' zu. // Gib den Wert von 'result' auf der Konsole aus. } }
+Lösung:
+
+public class _070_LogicalUndComparison {
+    public static void main(String[] args) {
+        // Deklariere zwei Integer-Variablen 'a' und 'b' und weise ihnen Werte zu.
+        int a = 15;
+        int b = 2;
+
+        // Deklariere eine Boolean-Variable 'result'.
+        boolean result;
+
+        // Verwende logische und Vergleichsoperatoren, um die folgenden Bedingungen zu
+        // überprüfen:
+        // - Ist 'a' größer als 10 und 'b' kleiner als 5?
+        result = a > 10 && b < 5;
+
+        // - Ist 'a' kleiner als 20 oder 'b' größer als 0?
+        result = a < 20 || b > 0;
+
+        // Weise die Ergebnisse der Bedingungen der Variable 'result' zu.
+
+        // Gib den Wert von 'result' auf der Konsole aus.
+        System.out.println("Ergebnis 1: " + result);
+        System.out.println("Ergebnis 2: " + result);
+    }
+}
+
+Erläuterung des Codes:
+•	Die Variable a wird auf 15 und die Variable b auf 2 gesetzt.
+•	Die Variable result wird deklariert und initialisiert mit false.
+•	Die erste Bedingung wird mit dem logischen Operator && überprüft.
+•	Die zweite Bedingung wird mit dem logischen Operator || überprüft.
+•	Die Ergebnisse der Bedingungen werden der Variable result zugewiesen.
+•	Die Werte von result werden auf der Konsole ausgegeben.
+Ausgabe:
+Ergebnis 1: false
+Ergebnis 2: true
+
+—----------------------------------------------------------------
+
+# 20
+
+public class _080_TemperaturKlassifikation {
+    public static void main(String[] args) {
+        // Deklariere eine Integer-Variable 'temperatur' und weise ihr einen Wert zu.
+        // Deklariere eine String-Variable 'ausgabe' und weise ihr den leeren String ""
+        // zu.
+
+        // Verwende if-else-if-else Anweisungen, um die 'temperatur' zu klassifizieren:
+        // - ausgabe = "Heiß" wenn temperatur > 30
+        // - ausgabe = "Warm" wenn temperatur zwischen 21 und 30
+        // - ausgabe = "Gemäßigt" wenn temperatur zwischen 11 und 20
+        // - ausgabe = "Kalt" wenn temperatur <= 10
+
+        // Gib die 'ausgabe' auf der Konsole aus.
+    }
+}
+
+Lösung:
+
+public class _080_TemperaturKlassifikation {
+    public static void main(String[] args) {
+        // Deklariere eine Integer-Variable 'temperatur' und weise ihr einen Wert zu.
+        int temperatur = 25;
+
+        // Deklariere eine String-Variable 'ausgabe' und weise ihr den leeren String ""
+        // zu.
+        String ausgabe = "";
+
+        // Verwende if-else-if-else Anweisungen, um die 'temperatur' zu klassifizieren:
+        // - ausgabe = "Heiß" wenn temperatur > 30
+        // - ausgabe = "Warm" wenn temperatur zwischen 21 und 30
+        // - ausgabe = "Gemäßigt" wenn temperatur zwischen 11 und 20
+        // - ausgabe = "Kalt" wenn temperatur <= 10
+
+        if (temperatur > 30) {
+            ausgabe = "Heiß";
+        } else if (temperatur >= 21 && temperatur <= 30) {
+            ausgabe = "Warm";
+        } else if (temperatur >= 11 && temperatur <= 20) {
+            ausgabe = "Gemäßigt";
+        } else {
+            ausgabe = "Kalt";
+        }
+
+        // Gib die 'ausgabe' auf der Konsole aus.
+        System.out.println("Die Temperatur ist " + temperatur + " Grad. Die Klassifikation ist: " + ausgabe);
+    }
+}
+Erläuterung des Codes:
+•	Die Variable temperatur wird auf 25 gesetzt.
+•	Die Variable ausgabe wird deklariert und initialisiert mit dem leeren String "".
+•	Die if-else-if-else-Anweisung überprüft die Temperatur und setzt die Variable ausgabe auf den entsprechenden Wert.
+•	Die Ausgabe wird auf der Konsole ausgegeben.
+Ausgabe:
+Die Temperatur ist 25 Grad. Die Klassifikation ist: Warm
+
+
+—----------------------------------------------------------------
+
+# 21
+
+public class _090_TernaryChallenge {
+
+    public static void main(String[] args) {
+        // Deklariere eine Variable namens 'wert1' vom Typ double.
+        // Weise dieser Variable das Ergebnis des folgenden ternären Operators zu:
+        // Ist 67.89 größer oder gleich 54.32? Wenn ja, weise den Wert 234.567 zu, sonst
+        // den Wert 345.678.
+
+        // Deklariere eine zweite Variable namens 'ergebnis'.
+        // Addiere zur 'wert1' den Wert 789.01 und weise das Ergebnis 'ergebnis' zu.
+
+        // Gib den Wert von 'ergebnis' auf der Konsole aus.
+    }
+}
+
+Lösung:
+
+public class _090_TernaryChallenge {
+    public static void main(String[] args) {
+        // Deklariere eine Variable namens 'wert1' vom Typ double.
+        double wert1;
+
+        // Weise dieser Variable das Ergebnis des folgenden ternären Operators zu:
+        // Ist 67.89 größer oder gleich 54.32? Wenn ja, weise den Wert 234.567 zu, sonst
+        // den Wert 345.678.
+        wert1 = 67.89 >= 54.32 ? 234.567 : 345.678;
+
+        // Deklariere eine zweite Variable namens 'ergebnis'.
+        double ergebnis;
+
+        // Addiere zur 'wert1' den Wert 789.01 und weise das Ergebnis 'ergebnis' zu.
+        ergebnis = wert1 + 789.01;
+
+        // Gib den Wert von 'ergebnis' auf der Konsole aus.
+        System.out.println("Ergebnis: " + ergebnis);
+    }
+}
+
+Erläuterung des Codes:
+•	Die Variable wert1 wird deklariert, aber noch nicht initialisiert.
+•	Der ternäre Operator wird verwendet, um den Wert von wert1 zuzuweisen. 
+    Wenn 67.89 größer oder gleich 54.32 ist, wird der Wert 234.567 zugewiesen. 
+    Andernfalls wird der Wert 345.678 zugewiesen.
+•	Die Variable ergebnis wird deklariert und initialisiert mit dem Wert 0.
+•	Der Wert von wert1 wird mit 789.01 addiert und der resultierende Wert wird ergebnis zugewiesen.
+•	Der Wert von ergebnis wird auf der Konsole ausgegeben.
+
+Ausgabe:
+Ergebnis: 1023.578
+
+—-----------------------------------------------------------------------
+
+# 22
+
+public class _090_TernaryOperator {
+    public static void main(String[] args) {
+        // siehe _090_TernaryOperator
+        // Deklariere eine Integer-Variable 'zahl' und weise ihr einen Wert zu.
+
+        // Verwende den ternären Operator, um zu überprüfen, ob 'zahl' gerade oder
+        // ungerade ist.
+        // Speichere das Ergebnis als String in einer Variable namens 'ergebnis'.
+
+        // Gib das 'ergebnis' auf der Konsole aus.
+    }
+}
+
+Lösung:
+
+public class _090_TernaryOperator {
+    public static void main(String[] args) {
+        // siehe _090_TernaryOperator
+        // Deklariere eine Integer-Variable 'zahl' und weise ihr einen Wert zu.
+
+        int zahl = 5;
+
+        // Verwende den ternären Operator, um zu überprüfen, ob 'zahl' gerade oder
+        // ungerade ist.
+        // Speichere das Ergebnis als String in einer Variable namens 'ergebnis'.
+
+        String ergebnis = zahl % 2 == 0 ? "gerade" : "ungerade";
+
+        // Gib das 'ergebnis' auf der Konsole aus.
+        System.out.println("Die Zahl ist " + ergebnis);
+    }
+}
+
+Erläuterung des Codes:
+•	Die Variable zahl wird deklariert und initialisiert mit dem Wert 5.
+•	Der ternäre Operator wird verwendet, um zu überprüfen, ob zahl gerade oder ungerade ist.
+•	Wenn zahl gerade ist, wird der Wert "gerade" zugewiesen. 
+    Andernfalls wird der Wert "ungerade" zugewiesen.
+•	Das Ergebnis wird in der Variable ergebnis gespeichert.
+•	Das Ergebnis wird auf der Konsole ausgegeben.
+
+Ausgabe:
+Die Zahl ist ungerade
+
+—-----------------------------------------------------------------------
+
+# 23
+
+public class _100_SchleifeStringKonkatenation {
+    public static void main(String[] args) {
+        // Deklariere eine String-Variable 'result' und weise ihr den leeren String ""
+        // zu.
+
+        // Verwende eine for-Schleife, um die Zahlen von 1 bis 5 als String an 'result'
+        // anzuhängen.
+
+        // Nach der Schleife sollte 'result' den Wert "12345" haben.
+        // Gib den Wert von 'result' auf der Konsole aus.
+    }
+}
+
+Lösung:
+
+public class _100_SchleifeStringKonkatenation {
+    public static void main(String[] args) {
+        // Deklariere eine String-Variable 'result' und weise ihr den leeren String ""
+        // zu.
+        String result = "";
+
+        // Verwende eine for-Schleife, um die Zahlen von 1 bis 5 als String an 'result'
+        // anzuhängen.
+        for (int i = 1; i <= 5; i++) {
+            // Füge die Zahl als String an 'result' an.
+            result += i;
+        }
+
+        // Nach der Schleife sollte 'result' den Wert "12345" haben.
+        // Gib den Wert von 'result' auf der Konsole aus.
+        System.out.println("Ergebnis: " + result);
+    }
+}
+
+
+Erläuterung des Codes:
+•	Die Variable result wird deklariert und initialisiert mit dem leeren String "".
+•	Die for-Schleife durchläuft die Zahlen von 1 bis 5.
+•	In jeder Iteration der Schleife wird die aktuelle Zahl als String an result angehängt.
+•	Nach der Schleife hat result den Wert "12345".
+•	Der Wert von result wird auf der Konsole ausgegeben.
+
+Ausgabe:
+Ergebnis: 12345
+
+—-----------------------------------------------------------------------
+
+# 24
+
 
 
