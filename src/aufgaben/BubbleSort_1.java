@@ -6,7 +6,7 @@ public class BubbleSort_1 {
 
         bubbleSort(array);
 
-        System.out.println("Sortiertes Feld:");
+        System.out.println("\nSortiertes Feld:");
         for (int element : array) {
             System.out.print(element + " ");
         }

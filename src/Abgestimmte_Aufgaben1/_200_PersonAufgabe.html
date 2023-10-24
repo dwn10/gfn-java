@@ -1,0 +1,61 @@
+package Abgestimmte_Aufgaben1;
+
+public class _200_PersonAufgabe {
+
+    public static void main(String[] args) {
+        // Erstelle eine Instanz der Klasse 'Person'.
+        Person person = new Person("Max", "Mustermann", 30, true);
+
+        // Gib alle Werte des Objekts, einschließlich des Werts von 'worksFulltime', auf
+        // der Konsole aus.
+        System.out.println("Name: " + person.getName());
+        System.out.println("Vorname: " + person.getVorname());
+        System.out.println("Alter: " + person.getAlter());
+        System.out.println("Beschäftigung: " + (person.isWorksFulltime() ? "Vollzeit" : "Teilzeit"));
+    }
+}
+
+// Erstelle eine Klasse namens 'Person' mit den folgenden Attributen:
+// - Ein public String 'Name'.
+// - Ein public String 'Vorname'.
+// - Ein public Integer 'Alter'.
+// - Ein private Boolean 'worksFulltime'.
+
+// Für das Attribut 'worksFulltime' soll es einen öffentlichen Getter geben,
+// aber keinen Setter.
+
+// Zusatz: Implementiere einen Konstruktor für die Klasse 'Person', der alle
+// Attribute initialisiert.
+
+public class Person {
+
+    private String name;
+    private String vorname;
+    private int alter;
+    private boolean worksFulltime;
+
+    public Person(String name, String vorname, int alter, boolean worksFulltime) {
+        this.name = name;
+        this.vorname = vorname;
+        this.alter = alter;
+        this.worksFulltime = worksFulltime;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getVorname() {
+        return vorname;
+    }
+
+    public int getAlter() {
+        return alter;
+    }
+
+    public boolean isWorksFulltime() {
+        return worksFulltime;
+    }
+
+    // Setter für 'worksFulltime' ist nicht implementiert.
+}
